@@ -51,7 +51,7 @@ python object-tracker-single.py -v <path-2-video-file>
 
 ---
 
-If you want to do multi object tracking code, use the file `object-tracker-multi.py` instead of `object-tracker-single.py`. This is a hack to do multi-object tracking and _hence the code slows down_.
+__NOTE__ -- If you want to do multi object tracking code, use the file `object-tracker-multi.py` instead of `object-tracker-single.py`. This is a hack to do multi-object tracking and __hence the code slows down__.
 
 ## How to perform tracking
 
