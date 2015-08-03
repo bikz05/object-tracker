@@ -7,6 +7,7 @@ Real-Time Ojbect Tracker written in Python using dlib and OpenCV
 * [Starting the code](#starting-the-code)
 * [How to perform tracking](#how-to-perform-tracking)
 * [Links to Installation Instructions](#links-to-installation-instructions)
+
 ---
 
 ## Dependencies
