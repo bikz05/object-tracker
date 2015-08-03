@@ -1,5 +1,5 @@
 # object-tracker
-__Real-Time (yes it works :smile: ) Object Tracker written in Python using dlib and OpenCV__
+_Real-Time (yes it works :smile: ) Object Tracker written in Python using dlib and OpenCV_
 
 # Table of Contents
 
