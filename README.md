@@ -6,13 +6,13 @@ Real-Time Ojbect Tracker written in Python using dlib and OpenCV
 * [Dependencies](#dependencies)
 * [Starting the code](#starting-the-code)
 * [How to perform tracking](#how-to-perform-tracking)
-
+* [Links to Installation Instructions](#links-to-installation-instructions)
 ---
 
 ## Dependencies
 
-* [Dlib with Python support](http://dlib.net/)
-* [OpenCV with Python support](http://opencv.org)
+* [`Dlib` with Python support](http://dlib.net/)
+* [`OpenCV` with Python support](http://opencv.org)
 
 ---
 
@@ -50,10 +50,15 @@ python object-tracker-single.py -v <path-2-video-file>
 
 ---
 
-If you want to do multi-tracking code use the file `object-tracker-multi.py` instead of `object-tracker-single.py`. This is a hack to do multi-object tracking and hence the code slows down.
+If you want to do multi object tracking code, use the file `object-tracker-multi.py` instead of `object-tracker-single.py`. This is a hack to do multi-object tracking and _hence the code slows down_.
 
 ## How to perform tracking
 
-Once the code starts, it will start the video. To pause the video to select the object to be tracked press <kbd>p</kbd>.The next step is to create a bounding box around the object to be tracked. Press the mouse on the top-left pixel location of the object to be tracked and then release the mouse on the bottom-right location of the object to be tracked. Once, this is done press <kbd>p</kbd> to start the tracking. If you want to change the position of the project, press <kbd>d</kbd> to discard the object selected. In SINGLE OBJECT TRACKING MODE, you can only select one object but in MULTI OBJECTTRACKING MODE, you can select as many objects you want but at the cost of speed. Press <kbd>esc</kbd> anytime to gracefully quit the code.
+Once the code starts, it will start the video file or the live stream. To select the objects to be tracked, pause the video by pressing the <kbd>p</kbd> key.The next step is to create a bounding box around the object(s) to be tracked. Press the mouse to select the top-left pixel location of the object to be tracked and then release the mouse on the bottom-right location of the object to be tracked. Once, this is done press <kbd>p</kbd> to start the tracking. Also, if you want to discard the object, press the <kbd>d</kbd> key. In SINGLE OBJECT TRACKING MODE, you can only select one object but in MULTI OBJECT TRACKING MODE, you can select as many objects you want but at the cost of speed. Press <kbd>esc</kbd> anytime to gracefully quit the code.
 
 ---
+
+## Links to Installation Instructions
+
+* `OpenCV` -- [Install OpenCV 3.0 and Python 2.7+ on Ubuntu](http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/)
+* `Dlib` -- [How to compile](http://dlib.net/compile.html)
