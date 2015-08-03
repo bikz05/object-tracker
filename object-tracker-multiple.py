@@ -19,6 +19,7 @@ def run(source=0):
         retval, img = cam.read()
         if not retval:
             print "Cannot capture frame device"
+            exit()
         if(cv2.waitKey(10)==ord('p')):
             break
         cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
@@ -47,6 +48,7 @@ def run(source=0):
         retval, img = cam.read()
         if not retval:
             print "Cannot capture frame device"
+            exit()
         # Update the tracker  
         for i in xrange(len(tracker)):
             tracker[i].update(img)
