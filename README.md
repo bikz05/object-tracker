@@ -1,4 +1,7 @@
 # object-tracker
+
+![Image](docs/images/cover-image-1.png)
+
 _Real-Time (yes it works :smile: ) Object Tracker written in Python using dlib and OpenCV_
 
 ---
