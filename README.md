@@ -30,7 +30,7 @@ python object-tracker-single.py -v <path-2-video-file>
 For example, you can use the demo video provided with this code as --
 
 ```shell
-#TODO
+python object-tracker-single.py -v demo-video-single.avi
 ```
 
 ### Live Video
@@ -43,9 +43,11 @@ python object-tracker-single.py -d <device-id>
 
 For example, on most systems device id 0 is the webcam attached.
 
-```shell
-python object-tracker-single.py -v <path-2-video-file>
+```shell:
+python object-tracker-single.py -v docs/demo-single-video.avi
 ```
+
+Use the `-l` or '--dispLoc' command line option to display the object locations on the display image.
 
 __NOTE__ -- If you want to do multi object tracking code, use the file `object-tracker-multi.py` instead of `object-tracker-single.py`. This is a hack to do multi-object tracking and __hence the code slows down__.
 

@@ -4,7 +4,7 @@ import cv2
 import argparse as ap
 import get_points
 
-def run(source=0):
+def run(source=0, dispLoc=False):
     # Create the VideoCapture object
     cam = cv2.VideoCapture(source)
 
@@ -47,7 +47,7 @@ def run(source=0):
         # Read frame from device or file
         retval, img = cam.read()
         if not retval:
-            print "Cannot capture frame device"
+            print "Cannot capture frame device | CODE TERMINATING :("
             exit()
         # Update the tracker  
         tracker.update(img)
@@ -58,6 +58,10 @@ def run(source=0):
         pt2 = (int(rect.right()), int(rect.bottom()))
         cv2.rectangle(img, pt1, pt2, (255, 255, 255), 3)
         print "Object tracked at [{}, {}] \r".format(pt1, pt2),
+        if dispLoc:
+            loc = (int(rect.left()), int(rect.top()-20))
+	    txt = "Object tracked at [{}, {}]".format(pt1, pt2)
+	    cv2.putText(img, txt, loc , cv2.FONT_HERSHEY_SIMPLEX, .5, (255,255,255), 1)
         cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
         cv2.imshow("Image", img)
         # Continue until the user presses ESC key
@@ -73,6 +77,7 @@ if __name__ == "__main__":
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('-d', "--deviceID", help="Device ID")
     group.add_argument('-v', "--videoFile", help="Path to Video File")
+    parser.add_argument('-l', "--dispLoc", dest="dispLoc", action="store_true")
     args = vars(parser.parse_args())
 
     # Get the source of video
@@ -80,4 +85,4 @@ if __name__ == "__main__":
         source = args["videoFile"]
     else:
         source = int(args["deviceID"])
-    run(source)
+    run(source, args["dispLoc"])
