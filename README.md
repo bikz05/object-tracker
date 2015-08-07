@@ -2,7 +2,7 @@
 
 ![Image](docs/images/cover-image-1.png)
 
-_Real-Time Object Tracker written in Python using dlib and OpenCV_
+_Real-Time Object Tracker written in Python using dlib and OpenCV_ | [Video](https://www.youtube.com/watch?v=uLZquACzXVg)
 
 ---
 
@@ -11,7 +11,6 @@ _Real-Time Object Tracker written in Python using dlib and OpenCV_
 * [Dependencies](#dependencies)
 * [Starting the code](#starting-the-code)
 * [How to perform tracking](#how-to-perform-tracking)
-* [Links to Installation Instructions](#links-to-installation-instructions)
 
 ## Dependencies
 
@@ -20,9 +19,9 @@ _Real-Time Object Tracker written in Python using dlib and OpenCV_
 
 ## Starting the code
 
-Tracking can either be done either using a live video from a webcam or using a video file.
+Tracking can either be done using a live video from a webcam or using a video file.
 
-### Video File
+### Tracking using Video File
 
 To run the code using a video file use the following command line argument --
 
@@ -36,7 +35,7 @@ For example, you can use the demo video provided with this code as --
 python object-tracker-single.py -v demo-video-single.avi
 ```
 
-### Live Video
+### Tracking using Live Video
 
 To run the code using live video use the following command line argument --
 
@@ -50,7 +49,12 @@ For example, on most systems device id 0 is the webcam attached.
 python object-tracker-single.py -v docs/demo-single-video.avi
 ```
 
-Use the `-l` or `--dispLoc' command line option to display the object locations on the display image.
+Use the `-l` or `--dispLoc' command line option to display the locations of the tracked object as show below - 
+
+
+```shell:
+python object-tracker-single.py -v docs/demo-single-video.avi -l
+```
 
 __NOTE__ -- If you want to do multi object tracking code, use the file `object-tracker-multi.py` instead of `object-tracker-single.py`. This is a hack to do multi-object tracking and __hence the code slows down__.
 
