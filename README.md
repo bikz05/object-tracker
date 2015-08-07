@@ -2,7 +2,7 @@
 
 ![Image](docs/images/cover-image-1.png)
 
-_Real-Time (yes it works :smile: ) Object Tracker written in Python using dlib and OpenCV_
+_Real-Time Object Tracker written in Python using dlib and OpenCV_
 
 ---
 
@@ -50,15 +50,10 @@ For example, on most systems device id 0 is the webcam attached.
 python object-tracker-single.py -v docs/demo-single-video.avi
 ```
 
-Use the `-l` or '--dispLoc' command line option to display the object locations on the display image.
+Use the `-l` or `--dispLoc' command line option to display the object locations on the display image.
 
 __NOTE__ -- If you want to do multi object tracking code, use the file `object-tracker-multi.py` instead of `object-tracker-single.py`. This is a hack to do multi-object tracking and __hence the code slows down__.
 
 ## How to perform tracking
 
 Once the code starts, it will start the video file or the live stream. To select the objects to be tracked, pause the video by pressing the <kbd>p</kbd> key.The next step is to create a bounding box around the object(s) to be tracked. Press the mouse to select the top-left pixel location of the object to be tracked and then release the mouse on the bottom-right location of the object to be tracked. Once, this is done press <kbd>p</kbd> to start the tracking. Also, if you want to discard the object, press the <kbd>d</kbd> key. In SINGLE OBJECT TRACKING MODE, you can only select one object but in MULTI OBJECT TRACKING MODE, you can select as many objects you want but at the cost of speed. Press <kbd>esc</kbd> anytime to gracefully quit the code.
-
-## Links to Installation Instructions
-
-* `OpenCV` -- [Install OpenCV 3.0 and Python 2.7+ on Ubuntu](http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/)
-* `Dlib` -- [How to compile](http://dlib.net/compile.html)
