@@ -2,7 +2,7 @@
 
 ![Image](docs/images/cover-image-1.png)
 
-_Real-Time Object Tracker written in Python using dlib and OpenCV_ | [Video](https://www.youtube.com/watch?v=uLZquACzXVg)
+_Real-Time Object Tracker written in Python using dlib and OpenCV_ | [Video 1](https://www.youtube.com/watch?v=uLZquACzXVg) [Video 2](https://youtu.be/VVo-5kVmDEY)
 
 ---
 
