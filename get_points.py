@@ -53,7 +53,9 @@ def run(im, multi=False):
         if key == ord('p'):
             # Press key `s` to return the selected points
             cv2.destroyAllWindows()
-            return [(tl + br) for tl, br in zip(pts_1, pts_2)]
+            point= [(tl + br) for tl, br in zip(pts_1, pts_2)]
+            corrected_point=check_point(point)
+            return corrected_point
         elif key == ord('q'):
             # Press key `q` to quit the program
             print "Quitting without saving."
@@ -68,7 +70,28 @@ def run(im, multi=False):
             else:
                 print "No object to delete."
     cv2.destroyAllWindows()
-    return [(tl + br) for tl, br in zip(pts_1, pts_2)]
+    point= [(tl + br) for tl, br in zip(pts_1, pts_2)]
+    corrected_point=check_point(point)
+    return corrected_point
+
+def check_point(points):
+    #to find min and max x coordinates
+    if points[0][0]<points[0][2]:
+        minx=points[0][0]
+        maxx=points[0][2]
+    else:
+        minx=points[0][2]
+        maxx=points[0][0]
+    #to find min and max y coordinates
+    if points[0][1]<points[0][3]:
+        miny=points[0][1]
+        maxy=points[0][3]
+    else:
+        miny=points[0][3]
+        maxy=points[0][1]
+
+    return [(minx,miny,maxx,maxy)]
+
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

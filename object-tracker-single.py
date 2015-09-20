@@ -33,7 +33,7 @@ def run(source=0, dispLoc=False):
     if not points:
         print "ERROR: No object to be tracked."
         exit()
-
+    
     cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
     cv2.imshow("Image", img)
 
