@@ -75,22 +75,25 @@ def run(im, multi=False):
     return corrected_point
 
 def check_point(points):
-    #to find min and max x coordinates
-    if points[0][0]<points[0][2]:
-        minx=points[0][0]
-        maxx=points[0][2]
-    else:
-        minx=points[0][2]
-        maxx=points[0][0]
-    #to find min and max y coordinates
-    if points[0][1]<points[0][3]:
-        miny=points[0][1]
-        maxy=points[0][3]
-    else:
-        miny=points[0][3]
-        maxy=points[0][1]
+    out=[]
+    for point in points:
+        #to find min and max x coordinates
+        if point[0]<point[2]:
+            minx=point[0]
+            maxx=point[2]
+        else:
+            minx=point[2]
+            maxx=point[0]
+        #to find min and max y coordinates
+        if point[1]<point[3]:
+            miny=point[1]
+            maxy=point[3]
+        else:
+            miny=point[3]
+            maxy=point[1]
+        out.append((minx,miny,maxx,maxy))
 
-    return [(minx,miny,maxx,maxy)]
+    return out
 
 
 if __name__ == "__main__":
