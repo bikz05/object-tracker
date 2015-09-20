@@ -60,8 +60,8 @@ def run(source=0, dispLoc=False):
         print "Object tracked at [{}, {}] \r".format(pt1, pt2),
         if dispLoc:
             loc = (int(rect.left()), int(rect.top()-20))
-        txt = "Object tracked at [{}, {}]".format(pt1, pt2)
-        cv2.putText(img, txt, loc , cv2.FONT_HERSHEY_SIMPLEX, .5, (255,255,255), 1)
+            txt = "Object tracked at [{}, {}]".format(pt1, pt2)
+            cv2.putText(img, txt, loc , cv2.FONT_HERSHEY_SIMPLEX, .5, (255,255,255), 1)
         cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
         cv2.imshow("Image", img)
         # Continue until the user presses ESC key
