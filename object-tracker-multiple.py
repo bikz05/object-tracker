@@ -20,7 +20,7 @@ def run(source=0, dispLoc=False):
         if not retval:
             print "Cannot capture frame device"
             exit()
-        if(cv2.waitKey(10)==ord('p')):
+        if(0xFF & cv2.waitKey(10))==ord('p'):
             break
         cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
         cv2.imshow("Image", img)
@@ -66,7 +66,7 @@ def run(source=0, dispLoc=False):
         cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
         cv2.imshow("Image", img)
         # Continue until the user presses ESC key
-        if cv2.waitKey(1) == 27:
+        if (0xFF & cv2.waitKey(1)) == 27:
             break
 
     # Relase the VideoCapture object

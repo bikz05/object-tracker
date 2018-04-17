@@ -49,7 +49,7 @@ def run(im, multi=False):
         # Display the cropped images
         cv2.namedWindow(window_name_2, cv2.WINDOW_NORMAL)
         cv2.imshow(window_name_2, im_disp)
-        key = cv2.waitKey(30)
+        key = (0xFF & cv2.waitKey(30))
         if key == ord('p'):
             # Press key `s` to return the selected points
             cv2.destroyAllWindows()
