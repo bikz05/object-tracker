@@ -18,27 +18,27 @@ def run(im, multi=False):
 
     def callback(event, x, y, flags, param):
         if event == cv2.EVENT_LBUTTONDOWN:
-	    if multi == False and len(pts_2) == 1:
-		print "WARN: Cannot select another object in SINGLE OBJECT TRACKING MODE."
-		print "Delete the previously selected object using key `d` to mark a new location."
-		return
+            if multi == False and len(pts_2) == 1:
+                print("WARN: Cannot select another object in SINGLE OBJECT TRACKING MODE.")
+                print("Delete the previously selected object using key `d` to mark a new location.")
+                return
             run.mouse_down = True
             pts_1.append((x, y))
         elif event == cv2.EVENT_LBUTTONUP and run.mouse_down == True:
             run.mouse_down = False
             pts_2.append((x, y))
-            print "Object selected at [{}, {}]".format(pts_1[-1], pts_2[-1])
+            print(f"Object selected at [{pts_1[-1]}, {pts_2[-1]}]")
         elif event == cv2.EVENT_MOUSEMOVE and run.mouse_down == True:
             im_draw = im.copy()
             cv2.rectangle(im_draw, pts_1[-1], (x, y), (255,255,255), 3)
             cv2.imshow(window_name, im_draw)
 
-    print "Press and release mouse around the object to be tracked. \n You can also select multiple objects."
+    print("Press and release mouse around the object to be tracked. \n You can also select multiple objects.")
     cv2.setMouseCallback(window_name, callback)
 
-    print "Press key `p` to continue with the selected points."
-    print "Press key `d` to discard the last object selected."
-    print "Press key `q` to quit the program."
+    print("Press key `p` to continue with the selected points.")
+    print("Press key `d` to discard the last object selected.")
+    print("Press key `q` to quit the program.")
 
     while True:
         # Draw the rectangular boxes on the image
@@ -58,17 +58,17 @@ def run(im, multi=False):
             return corrected_point
         elif key == ord('q'):
             # Press key `q` to quit the program
-            print "Quitting without saving."
+            print("Quitting without saving.")
             exit()
         elif key == ord('d'):
             # Press ket `d` to delete the last rectangular region
             if run.mouse_down == False and pts_1:
-                print "Object deleted at  [{}, {}]".format(pts_1[-1], pts_2[-1])
+                print(f"Object deleted at  [{pts_1[-1]}, {pts_2[-1]}]")
                 pts_1.pop()
                 pts_2.pop()
                 im_disp = im.copy()
             else:
-                print "No object to delete."
+                print("No object to delete.")
     cv2.destroyAllWindows()
     point= [(tl + br) for tl, br in zip(pts_1, pts_2)]
     corrected_point=check_point(point)
@@ -105,7 +105,7 @@ if __name__ == "__main__":
     try:
         im = cv2.imread(args["imagepath"])
     except:
-        print "Cannot read image and exiting."
+        print("Cannot read image and exiting.")
         exit()
     points = run(im)
-    print "Rectangular Regions Selected are -> ", points
+    print("Rectangular Regions Selected are -> ", points)

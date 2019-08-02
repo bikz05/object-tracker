@@ -10,15 +10,15 @@ def run(source=0, dispLoc=False):
 
     # If Camera Device is not opened, exit the program
     if not cam.isOpened():
-        print "Video device or file couldn't be opened"
+        print("Video device or file couldn't be opened")
         exit()
     
-    print "Press key `p` to pause the video to start tracking"
+    print("Press key `p` to pause the video to start tracking")
     while True:
         # Retrieve an image and Display it.
         retval, img = cam.read()
         if not retval:
-            print "Cannot capture frame device"
+            print("Cannot capture frame device")
             exit()
         if(cv2.waitKey(10)==ord('p')):
             break
@@ -31,7 +31,7 @@ def run(source=0, dispLoc=False):
     points = get_points.run(img) 
 
     if not points:
-        print "ERROR: No object to be tracked."
+        print("ERROR: No object to be tracked.")
         exit()
     
     cv2.namedWindow("Image", cv2.WINDOW_NORMAL)
@@ -47,7 +47,7 @@ def run(source=0, dispLoc=False):
         # Read frame from device or file
         retval, img = cam.read()
         if not retval:
-            print "Cannot capture frame device | CODE TERMINATING :("
+            print("Cannot capture frame device | CODE TERMINATING :(")
             exit()
         # Update the tracker  
         tracker.update(img)
@@ -57,7 +57,7 @@ def run(source=0, dispLoc=False):
         pt1 = (int(rect.left()), int(rect.top()))
         pt2 = (int(rect.right()), int(rect.bottom()))
         cv2.rectangle(img, pt1, pt2, (255, 255, 255), 3)
-        print "Object tracked at [{}, {}] \r".format(pt1, pt2),
+        print (f"Object tracked at [{pt1}, {pt2}] \r")
         if dispLoc:
             loc = (int(rect.left()), int(rect.top()-20))
             txt = "Object tracked at [{}, {}]".format(pt1, pt2)
